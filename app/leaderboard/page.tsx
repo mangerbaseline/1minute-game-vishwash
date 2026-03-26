@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion, AnimatePresence, Variants } from 'framer-motion'
 import { ChevronLeft, Trophy, Medal, Star, Compass } from 'lucide-react'
 
 type Period = 'daily' | 'weekly' | 'monthly'
@@ -14,7 +14,7 @@ interface Score {
   createdAt: string
 }
 
-const listVariants = {
+const listVariants: Variants = {
   hidden: { opacity: 0 },
   show: {
     opacity: 1,
@@ -22,7 +22,7 @@ const listVariants = {
   }
 }
 
-const itemVariants = {
+const itemVariants: Variants = {
   hidden: { opacity: 0, y: 15, scale: 0.95 },   
   show: { opacity: 1, y: 0, scale: 1, transition: { type: 'spring', stiffness: 300, damping: 24 } }
 }

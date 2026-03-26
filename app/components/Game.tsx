@@ -13,7 +13,7 @@ export default function Game() {
     const [isPlaying, setIsPlaying] = useState(false)
     const [message, setMessage] = useState('Click to start!')
 
-    const timeoutRef = useRef<NodeJS.Timeout>()
+    const timeoutRef = useRef<NodeJS.Timeout | undefined>(undefined)
     const startTimeRef = useRef<number>(0)
 
     const startGame = useCallback(() => {

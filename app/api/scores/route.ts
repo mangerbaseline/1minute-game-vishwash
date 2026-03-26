@@ -80,7 +80,7 @@ export async function POST(request: NextRequest) {
                         date: today,
                         score: score
                     }
-                }
+                } as any
             }
         )
 
