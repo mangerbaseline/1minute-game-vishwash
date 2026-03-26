@@ -1,0 +1,22 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"     // or "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id            String    @id @default(cuid())
+  email         String?   @unique
+  stripeId      String?   @unique
+  subscriptionActive Boolean @default(false)
+  subscriptionEnd DateTime?
+  referralCode   String    @unique @default(cuid())
+  referredBy     String?
+  attempts       Attempt[]
+  scores         Score[]
+  referrals      Referral[]
+  createdAt      DateTime  @default(now())
+  updatedAt     

@@ -1,0 +1,34 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+  }
+
+  * {
+    @apply border-gray-200;
+  }
+
+  body {
+    @apply bg-gray-50 text-gray-900 antialiased;
+  }
+}
+
+@layer components {
+  .game-button {
+    @apply w-full h-64 rounded-xl transition-all duration-200 active:scale-95 cursor-pointer select-none flex items-center justify-center text-2xl font-bold;
+  }
+
+  .waiting {
+    @apply bg-blue-500 hover:bg-blue-600 text-white;
+  }
+
+  .active {
+    @apply bg-green-500 hover:bg-green-600 text-white;
+  }
+
+  .too-soon {
+    @apply bg-red-500 text-white;
+  }
+}
